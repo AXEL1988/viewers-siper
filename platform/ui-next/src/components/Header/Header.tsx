@@ -1,15 +1,15 @@
-import React, { ReactNode } from 'react';
+import { IconPresentationProvider } from '@ohif/ui-next';
 import classNames from 'classnames';
+import React, { ReactNode } from 'react';
 import {
+  Button,
   DropdownMenu,
-  DropdownMenuTrigger,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuTrigger,
   Icons,
-  Button,
   ToolButton,
 } from '../';
-import { IconPresentationProvider } from '@ohif/ui-next';
 
 import NavBar from '../NavBar';
 
@@ -23,7 +23,7 @@ interface HeaderProps {
     onClick: () => void;
   }>;
   isReturnEnabled?: boolean;
-  onClickReturnButton?: () => void;
+  //onClickReturnButton?: () => void;
   isSticky?: boolean;
   WhiteLabeling?: {
     createLogoComponentFn?: (React: any, props: any) => ReactNode;
@@ -37,7 +37,7 @@ function Header({
   children,
   menuOptions,
   isReturnEnabled = true,
-  onClickReturnButton,
+  //onClickReturnButton,
   isSticky = false,
   WhiteLabeling,
   PatientInfo,
@@ -45,11 +45,11 @@ function Header({
   Secondary,
   ...props
 }: HeaderProps): ReactNode {
-  const onClickReturn = () => {
-    if (isReturnEnabled && onClickReturnButton) {
-      onClickReturnButton();
-    }
-  };
+  // const onClickReturn = () => {
+  //   if (isReturnEnabled && onClickReturnButton) {
+  //     onClickReturnButton();
+  //   }
+  // };
 
   return (
     <IconPresentationProvider
@@ -67,7 +67,7 @@ function Header({
                 'mr-3 inline-flex items-center',
                 isReturnEnabled && 'cursor-pointer'
               )}
-              onClick={onClickReturn}
+              // onClick={onClickReturn}
               data-cy="return-to-work-list"
             >
               {isReturnEnabled && <Icons.ArrowLeft className="text-primary ml-1 h-7 w-7" />}

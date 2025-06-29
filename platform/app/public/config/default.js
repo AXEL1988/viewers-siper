@@ -278,18 +278,71 @@ window.config = {
   // whiteLabeling: {
   //   createLogoComponentFn: function (React) {
   //     return React.createElement(
-  //       'a',
+  //       'div',
   //       {
-  //         target: '_self',
-  //         rel: 'noopener noreferrer',
-  //         className: 'text-purple-600 line-through',
-  //         href: '_X___IDC__LOGO__LINK___Y_',
+  //         className:
+  //           'text-primary hover:text-primary-light transition-colors duration-200 cursor-default',
+  //         title: 'SIPER Medical Imaging Platform',
+  //         style: {
+  //           display: 'flex',
+  //           alignItems: 'center',
+  //           justifyContent: 'center',
+  //           padding: '8px 16px',
+  //           borderRadius: '8px',
+  //           backgroundColor: '#1a1a2e',
+  //           color: '#5ACCE6',
+  //           fontWeight: 'bold',
+  //           fontSize: '18px',
+  //           textDecoration: 'none',
+  //           border: '2px solid #5ACCE6',
+  //           transition: 'all 0.3s ease',
+  //           userSelect: 'none',
+  //         },
+  //         onMouseEnter: function (e) {
+  //           e.target.style.backgroundColor = '#5ACCE6';
+  //           e.target.style.color = '#1a1a2e';
+  //           e.target.style.transform = 'scale(1.05)';
+  //         },
+  //         onMouseLeave: function (e) {
+  //           e.target.style.backgroundColor = '#1a1a2e';
+  //           e.target.style.color = '#5ACCE6';
+  //           e.target.style.transform = 'scale(1)';
+  //         },
   //       },
-  //       React.createElement('img', {
-  //         src: './Logo.svg',
-  //         className: 'w-14 h-14',
-  //       })
+  //       'SIPEREC'
   //     );
   //   },
   // },
+
+  whiteLabeling: {
+    createLogoComponentFn: function (React) {
+      return React.createElement(
+        'div',
+        {
+          style: {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: 'rgba(255,255,255,0.85)', // Fondo blanco translúcido
+            borderRadius: '10px',
+            padding: '6px 18px',
+            boxShadow: '0 2px 8px rgba(0,0,0,0.10)',
+            maxHeight: '48px',
+            maxWidth: '320px',
+            userSelect: 'none',
+          },
+        },
+        React.createElement('img', {
+          src: './assets/logosloganmed.png',
+          alt: 'SIPER Logo',
+          style: {
+            height: '36px',
+            width: 'auto',
+            display: 'block',
+            filter: 'drop-shadow(0 0 2px #fff)',
+          },
+        })
+      );
+    },
+  },
 };
